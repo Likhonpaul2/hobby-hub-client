@@ -10,6 +10,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import CreateGroup from "../Pages/CreateGroup";
 import MyGroups from "../Pages/MyGroups";
+import UpdateGroup from "../Pages/UpdateGroup";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
   {
     path:"/createGroup",
     element: <CreateGroup/>
+  },
+  {
+    path:"/updateGroup/:id",
+    element: <UpdateGroup/>
   },
   {
     path:"/myGroups",
