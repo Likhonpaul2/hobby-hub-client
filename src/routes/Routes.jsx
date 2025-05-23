@@ -11,6 +11,8 @@ import Register from "../Pages/Register";
 import CreateGroup from "../Pages/CreateGroup";
 import MyGroups from "../Pages/MyGroups";
 import UpdateGroup from "../Pages/UpdateGroup";
+import GroupDetails from "../Pages/GroupDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -38,15 +40,19 @@ export const router = createBrowserRouter([
   },
   {
     path:"/createGroup",
-    element: <CreateGroup/>
+    element: <PrivateRoutes><CreateGroup/></PrivateRoutes>
   },
   {
     path:"/updateGroup/:id",
-    element: <UpdateGroup/>
+    element: <PrivateRoutes><UpdateGroup/></PrivateRoutes>
   },
   {
     path:"/myGroups",
-    element: <MyGroups/>
+    element: <PrivateRoutes><MyGroups/></PrivateRoutes>
+  },
+  {
+    path:"/group/:id",
+    element:<PrivateRoutes><GroupDetails/></PrivateRoutes>
   },
 
 ]);

@@ -6,7 +6,7 @@ const MyLayout = () => {
     return (
         <div>
             <header>
-                <Navbar/>
+                {/* <Navbar/> */}
             </header>
             <main>
                 <Outlet/>

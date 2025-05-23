@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Chattogram Cyclers",
+    "category": "Running",
+    "description": "Join us for weekly morning rides around the beautiful city of Chattogram.",
+    "location": "Foy's Lake Park",
+    "imageUrl": "https://i.ibb.co/PsjYCdWY/8905154.jpg",
+    "maxMembers": 20,
+    "startDate": "2025-07-01",
+    "userName": "Asif Rahman",
+    "userEmail": "asif.cycle@example.com"
+  },
+  {
+    "name": "Sylhet Sketch Circle",
+    "category": "Drawing & Painting",
+    "description": "Meet local artists and improve your drawing and painting skills together.",
+    "location": "Ali Amjad's Clock Tower",
+    "imageUrl": "https://i.ibb.co/yBqS10TW/art.jpg",
+    "maxMembers": 12,
+    "startDate": "2025-06-20",
+    "userName": "Maliha Khatun",
+    "userEmail": "maliha.art@example.com"
+  },
+  {
+    "name": "Rajshahi Readers Club",
+    "category": "Reading",
+    "description": "A calm space for book lovers to meet and discuss weekly reads.",
+    "location": "Padma River Bank Park",
+    "imageUrl": "https://i.ibb.co/ZzR0yMqz/4165.jpg",
+    "maxMembers": 10,
+    "startDate": "2025-06-25",
+    "userName": "Tanvir Ahmed",
+    "userEmail": "tanvir.read@example.com"
+  },
+  {
+    "name": "Coding Café Dhaka",
+    "category": "Video Gaming",
+    "description": "A weekend group for coding enthusiasts who also love gaming meetups.",
+    "location": "Dhanmondi 27 Café",
+    "imageUrl": "https://i.ibb.co/cS6v81DF/coding-cafe.jpg",
+    "maxMembers": 25,
+    "startDate": "2025-06-22",
+    "userName": "Zahidul Islam",
+    "userEmail": "zahid.dev@example.com"
+  },
+  {
+    "name": "Nature Sketchers",
+    "category": "Drawing & Painting",
+    "description": "Outdoor painting sessions in green spaces around Khulna.",
+    "location": "Khulna Shishu Park",
+    "imageUrl": "https://i.ibb.co/QF3x6BmJ/101795-OMF7-M6-602.jpg",
+    "maxMembers": 8,
+    "startDate": "2025-06-18",
+    "userName": "Fariha Sultana",
+    "userEmail": "fariha.sketch@example.com"
+  },
+   {
+    "name": "Barisal Food Explorers",
+    "category": "Cooking",
+    "description": "Explore and share traditional recipes every weekend with local foodies.",
+    "location": "Bell's Park",
+    "imageUrl": "https://i.ibb.co/S1Bnq0s/food-explorer.webp",
+    "maxMembers": 14,
+    "startDate": "2025-06-28",
+    "userName": "Rumana Akter",
+    "userEmail": "rumana.cook@example.com"
+  },
+  {
+    "name": "Comilla Canvas Collective",
+    "category": "Drawing & Painting",
+    "description": "A creative painting circle for all levels – beginner to pro!",
+    "location": "Shalban Bihar",
+    "imageUrl": "https://i.ibb.co/cKFvLD7S/drawig.jpg",
+    "maxMembers": 18,
+    "startDate": "2025-07-02",
+    "userName": "Shoaib Hossain",
+    "userEmail": "shoaib.paint@example.com"
+  },
+  {
+
+    "name": "Rangpur Storytellers",
+    "category": "Writing",
+    "description": "Weekly meetups to write, critique, and polish short stories and poems.",
+    "location": "Tajhat Palace Garden",
+    "imageUrl": "https://i.ibb.co/S7vqSspv/storytelling-doodle-vector-illustration.webp",
+    "maxMembers": 9,
+    "startDate": "2025-06-21",
+    "userName": "Hasan Kabir",
+    "userEmail": "hasan.write@example.com"
+  },
+  {
+    "name": "Bogura Chess & Brew",
+    "category": "Reading",
+    "description": "Casual chess, reading, and coffee evenings at a local library café.",
+    "location": "Bogura Central Library",
+    "imageUrl": "https://i.ibb.co/KdRKypk/chess-update-2048px-thehouseofstaunton.webp",
+    "maxMembers": 16,
+    "startDate": "2025-06-23",
+    "userName": "Sadia Noor",
+    "userEmail": "sadia.read@example.com"
+  },
+  {
+    "name": "Sylhet Trail Trekkers",
+    "category": "Hiking",
+    "description": "Explore the green hills and tea gardens of Sylhet with fellow adventurers.",
+    "location": "Malnichhera Tea Garden",
+    "imageUrl": "https://i.ibb.co/Gf3hvrVS/hiking.jpg",
+    "maxMembers": 20,
+    "startDate": "2025-06-30",
+    "userName": "Imran Haque",
+    "userEmail": "imran.hike@example.com"
+  },
+  {
+    "name": "Mymensingh Gamers United",
+    "category": "Video Gaming",
+    "description": "Weekend LAN parties and console game competitions every Friday night!",
+    "location": "Town Hall Community Center",
+    "imageUrl": "https://i.ibb.co/nqqn6NXB/video-gaming.jpg",
+    "maxMembers": 22,
+    "startDate": "2025-06-27",
+    "userName": "Kamal Uddin",
+    "userEmail": "kamal.gamer@example.com"
+  },
+  {
+    "name": "Khulna Anglers' Club",
+    "category": "Fishing",
+    "description": "A chilled-out group for weekend fishing trips and technique sharing.",
+    "location": "Rupsha River Bank",
+    "imageUrl": "https://i.ibb.co/C3SZ68mM/fishing.jpg",
+    "maxMembers": 13,
+    "startDate": "2025-07-03",
+    "userName": "Babar Ali",
+    "userEmail": "babar.fish@example.com"
+  }
+]

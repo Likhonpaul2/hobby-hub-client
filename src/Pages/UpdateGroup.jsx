@@ -1,20 +1,19 @@
-import {  useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 import { toast } from 'react-toastify';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import Spinner from '../Components/Spinner';
 
 const UpdateGroup = () => {
   const { id } = useParams();
-  
-//   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const [groupData, setGroupData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/groups/${id}`)
+    fetch(`https://hobby-hub-server-five.vercel.app/groups/${id}`)
       .then(res => res.json())
       .then(data => {
         setGroupData(data);
@@ -26,20 +25,48 @@ const UpdateGroup = () => {
       });
   }, [id]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setGroupData(prev => ({ ...prev, [name]: value }));
-  };
+
+  //   const { name, value } = e.target;
+  //   setGroupData(prev => ({ ...prev, [name]: value }));
+  // };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   fetch(`https://hobby-hub-server-five.vercel.app/groups/${id}`, {
+  //     method: 'PUT',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(groupData),
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       if (data.modifiedCount > 0) {
+  //         toast.success('Group updated successfully!');
+  //         navigate('/myGroups');
+  //       } else {
+  //         toast.warning('No changes made');
+  //       }
+  //     })
+  //     .catch(() => {
+  //       toast.error('Update failed');
+  //     });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const updatedGroup = Object.fromEntries(formData.entries());
 
-    fetch(`http://localhost:3000/groups/${id}`, {
+
+    fetch(`https://hobby-hub-server-five.vercel.app/groups/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(groupData),
+      body: JSON.stringify(updatedGroup),
     })
       .then(res => res.json())
       .then(data => {
@@ -53,47 +80,51 @@ const UpdateGroup = () => {
       .catch(() => {
         toast.error('Update failed');
       });
-  };
+  }
 
-  if (loading) return <p className="text-center mt-10">Loading...</p>;
+  if (loading) return <Spinner />;
   if (!groupData) return <p className="text-center mt-10">Group not found</p>;
+
+
+
 
   return (
     <div>
       <Navbar />
-      <div className="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+      <div className="max-w-2xl mx-auto mt-10 p-6  shadow-lg rounded-lg">
         <h2 className="text-2xl font-bold mb-6 text-center">Update Group</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-4"
+        >
           <input
             type="text"
             name="name"
-            value={groupData.name}
-            onChange={handleChange}
+            defaultValue={groupData.name}
+
             placeholder="Group Name"
             className="w-full p-2 border rounded"
             required
           />
           <select
             name="category"
-            value={groupData.category}
-            onChange={handleChange}
+            defaultValue={groupData.category}
             className="w-full p-2 border rounded"
             required
           >
-            <option value="">Select Category</option>
-            <option>Drawing & Painting</option>
-            <option>Photography</option>
-            <option>Video Gaming</option>
-            <option>Fishing</option>
-            <option>Running</option>
-            <option>Cooking</option>
-            <option>Reading</option>
-            <option>Writing</option>
+            <option defaultValue="" className="bg-black text-white">Select Category</option>
+            <option className="bg-black text-white">Drawing & Painting</option>
+            <option className="bg-black text-white">Photography</option>
+            <option className="bg-black text-white">Video Gaming</option>
+            <option className="bg-black text-white">Fishing</option>
+            <option className="bg-black text-white">Running</option>
+            <option className="bg-black text-white">Cooking</option>
+            <option className="bg-black text-white">Reading</option>
+            <option className="bg-black text-white">Writing</option>
           </select>
           <textarea
             name="description"
-            value={groupData.description}
-            onChange={handleChange}
+            defaultValue={groupData.description}
             placeholder="Group Description"
             className="w-full p-2 border rounded"
             rows={3}
@@ -102,8 +133,7 @@ const UpdateGroup = () => {
           <input
             type="text"
             name="location"
-            value={groupData.location}
-            onChange={handleChange}
+            defaultValue={groupData.location}
             placeholder="Meeting Location"
             className="w-full p-2 border rounded"
             required
@@ -111,8 +141,7 @@ const UpdateGroup = () => {
           <input
             type="number"
             name="maxMembers"
-            value={groupData.maxMembers}
-            onChange={handleChange}
+            defaultValue={groupData.maxMembers}
             placeholder="Max Members"
             className="w-full p-2 border rounded"
             required
@@ -120,31 +149,29 @@ const UpdateGroup = () => {
           <input
             type="date"
             name="startDate"
-            value={groupData.startDate}
-            onChange={handleChange}
+            defaultValue={groupData.startDate}
             className="w-full p-2 border rounded"
             required
           />
           <input
             type="text"
-            name="imageUrl"
-            value={groupData.imageUrl}
-            onChange={handleChange}
+            name="image"
+            defaultValue={groupData.image}
             placeholder="Image URL"
             className="w-full p-2 border rounded"
             required
           />
           <input
             type="text"
-            value={groupData.userName}
+            defaultValue={groupData.createdByName}
             readOnly
-            className="w-full p-2 border bg-gray-100 rounded"
+            className="w-full p-2 border  rounded"
           />
           <input
             type="email"
-            value={groupData.userEmail}
+            defaultValue={groupData.createdByEmail}
             readOnly
-            className="w-full p-2 border bg-gray-100 rounded"
+            className="w-full p-2 border  rounded"
           />
           <button
             type="submit"

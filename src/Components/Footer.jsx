@@ -1,30 +1,41 @@
-import React from 'react';
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
-    return (
-        <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 mx-auto container">
-            <nav>
-                <h6 className="footer-title">Services</h6>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
-            </nav>
-            <nav>
-                <h6 className="footer-title">Company</h6>
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
-            </nav>
-            <nav>
-                <h6 className="footer-title">Legal</h6>
-                <a className="link link-hover">Terms of use</a>
-                <a className="link link-hover">Privacy policy</a>
-                <a className="link link-hover">Cookie policy</a>
-            </nav>
-        </footer>
-    );
+  return (
+    <footer className="bg-gray-900 text-white py-8 mt-16">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* logo */}
+        <div className="text-xl font-semibold">
+          Hobby<span className="text-blue-400">Hub</span>
+        </div>
+
+        {/*  nav  */}
+        <div className="flex gap-6 text-sm">
+          <a href="/" className="hover:text-blue-400 transition">Home</a>
+          <a href="/allGroups" className="hover:text-blue-400 transition">All Groups</a>
+          <a href="/createGroup" className="hover:text-blue-400 transition">Create Group</a>
+          <a href="#" className="hover:text-blue-400 transition">Help</a>
+        </div>
+
+        {/* Social icons */}
+        <div className="flex gap-4 text-lg">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition">
+            <FaFacebookF />
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition">
+            <FaTwitter />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-pink-400 transition">
+            <FaInstagram />
+          </a>
+        </div>
+      </div>
+
+      <div className="text-center mt-6 text-sm text-gray-400">
+        &copy; {new Date().getFullYear()} HobbyHub. All rights reserved.
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

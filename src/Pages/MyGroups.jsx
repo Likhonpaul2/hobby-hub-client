@@ -14,7 +14,7 @@ const MyGroups = () => {
     const navigate = useNavigate();
 
     const fetchGroups = () => {
-        fetch(`http://localhost:3000/groups`)
+        fetch(`https://hobby-hub-server-five.vercel.app/groups`)
             .then(res => res.json())
             .then(data => {
                 setGroups(data);
@@ -45,7 +45,7 @@ const MyGroups = () => {
             if (result.isConfirmed) {
 
                 // delete group from db 
-                fetch(`http://localhost:3000/groups/${id}`, {
+                fetch(`https://hobby-hub-server-five.vercel.app/groups/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -78,7 +78,7 @@ const MyGroups = () => {
                 <Navbar />
             </header>
 
-            <main className="max-w-6xl mx-auto p-6">
+            <main className="max-w-6xl mx-auto p-6 min-h-screen">
                 <h2 className="text-3xl font-bold mb-6 text-center">My Created Groups</h2>
                 {groups.length === 0 ? (
                     <p className="text-center">You haven’t created any groups yet.</p>
