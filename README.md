@@ -1,12 +1,32 @@
-# React + Vite
+# Hobby Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hobby Hub is a web application designed to connect people with similar hobbies and interests. Users can discover, share, and join various hobby groups, participate in events, and build a community around their passions.
 
-Currently, two official plugins are available:
+# Live Link - https://hobby-hub-client-fcf7f.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **User Authentication:** Secure sign-up, login, and profile management.
+- **Browse & Join Hobbies:** Explore a wide range of hobbies and join groups.
+- **Create & Manage Groups:** Start your own hobby group and manage members.
+- **Event Management:** Organize and participate in hobby-related events.
+- **Community Interaction:** Post updates, share media, and interact with other members.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+
+- **Frontend:** React.js, Tailwind CSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Authentication:**  Firebase Auth
+- **Deployment:** Vercel(Backend),Firebase (Frontend)
+
+## Getting Started
+
+1. Clone the repository.
+2. Install dependencies: `npm install`
+3. Set up environment variables as needed.
+4. Run the development server: `npm start`
+
+
+
+*Happy hobbying with Hobby Hub!*
