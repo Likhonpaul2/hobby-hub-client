@@ -1,0 +1,12 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo Icon (Stylized H) -->
+  <rect x="0" y="10" width="10" height="40" rx="2" fill="#10B981"/>
+  <rect x="20" y="10" width="10" height="40" rx="2" fill="#10B981"/>
+  <rect x="10" y="25" width="10" height="10" rx="2" fill="#10B981"/>
+
+  <!-- Text: HobbyHub -->
+  <text x="40" y="38" font-family="Segoe UI, sans-serif" font-size="28" font-weight="bold" fill="#1F2937">
+    Hobby
+    <tspan fill="#10B981">Hub</tspan>
+  </text>
+</svg>
