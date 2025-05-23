@@ -10,7 +10,7 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 
 const Home = () => {
   const [featuredGroups, setFeaturedGroups] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     fetch('https://hobby-hub-server-five.vercel.app/featuredGroups')
