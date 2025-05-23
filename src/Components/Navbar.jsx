@@ -5,10 +5,12 @@ import { toast } from 'react-toastify';
 import { auth } from '../firebase/firebase.config';
 import { Menu, X } from 'lucide-react';
 
+
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
 
+  // user logout 
   const handleLogout = () => {
     signOutUser(auth)
       .then(() => {
@@ -60,8 +62,9 @@ const Navbar = () => {
     <nav className="backdrop-blur-md bg-white/30 dark:bg-gray-800/40 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="text-xl font-bold tracking-wide">
-          {/* logo */}
-          <div className="text-xl font-semibold">
+          {/* SVG Logo */}
+          <img src="logomain.svg" alt="" className='inline' />
+          <div className="text-xl font-semibold inline-block align-middle">
             Hobby<span className="text-blue-400">Hub</span>
           </div>
         </Link>
@@ -96,7 +99,7 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Mobile screen  */}
+        {/* small screen  */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800 dark:text-white">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -104,11 +107,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* small screen dropdown */}
       {isOpen && (
         <div className="md:hidden bg-gray-900 text-white px-4 py-4 space-y-4 text-lg">
           {navItems}
-          
+
           {user ? (
             <div className="space-y-3">
               <div className="flex items-center space-x-3">

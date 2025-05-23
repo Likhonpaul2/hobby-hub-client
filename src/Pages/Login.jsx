@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../Context/AuthContext';
@@ -12,12 +12,14 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    // authentication with email and password
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
 
+        // firebase auth 
         signInUser(email, password)
             .then(() => {
                 toast.success('Login successful!');
@@ -29,6 +31,7 @@ const Login = () => {
             });
     };
 
+    // auth with google 
     const handleGoogle = () => {
         googleSignIn()
             .then(() => {
@@ -41,11 +44,18 @@ const Login = () => {
             });
     };
 
+    // add title in page
+    useEffect(() => {
+        document.title = "Login | Hobby Hub"
+    }, [])
+
     return (
         <div>
+            {/* navbar */}
             <header>
                 <Navbar />
             </header>
+
             <main>
                 <div className="min-h-screen flex items-center justify-center px-4">
                     <div className="max-w-md w-full p-6 rounded shadow">
@@ -76,6 +86,9 @@ const Login = () => {
                     </div>
                 </div>
             </main>
+
+            
+            {/* footer  */}
             <footer>
                 <Footer />
             </footer>

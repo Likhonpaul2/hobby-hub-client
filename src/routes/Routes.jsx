@@ -1,8 +1,6 @@
 import {
-    createBrowserRouter,
+  createBrowserRouter,
 } from "react-router";
-
-import App from "../App";
 import MyLayout from "../Layout/MyLayout";
 import Home from "../Pages/Home";
 import AllGroups from "../Pages/AllGroups";
@@ -18,46 +16,46 @@ import ErrorPage from "../Pages/ErrorPage";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MyLayout/>,
-    children:[
-        {
-            index: true,
-            path:"/",
-            element: <Home/>
-        }
+    element: <MyLayout />,
+    children: [
+      {
+        index: true,
+        path: "/",
+        element: <Home />
+      }
     ]
   },
   {
-    path:"/login",
-    element: <Login/>
+    path: "/login",
+    element: <Login />
   },
   {
-    path:"/register",
-    element: <Register/>
+    path: "/register",
+    element: <Register />
   },
   {
-    path:"/allGroups",
-    element: <AllGroups/>
+    path: "/allGroups",
+    element: <AllGroups />
   },
   {
-    path:"/createGroup",
-    element: <PrivateRoutes><CreateGroup/></PrivateRoutes>
+    path: "/createGroup",
+    element: <PrivateRoutes><CreateGroup /></PrivateRoutes>
   },
   {
-    path:"/updateGroup/:id",
-    element: <PrivateRoutes><UpdateGroup/></PrivateRoutes>
+    path: "/updateGroup/:id",
+    element: <PrivateRoutes><UpdateGroup /></PrivateRoutes>
   },
   {
-    path:"/myGroups",
-    element: <PrivateRoutes><MyGroups/></PrivateRoutes>
+    path: "/myGroups",
+    element: <PrivateRoutes><MyGroups /></PrivateRoutes>
   },
   {
-    path:"/group/:id",
-    element:<PrivateRoutes><GroupDetails/></PrivateRoutes>
+    path: "/group/:id",
+    element: <PrivateRoutes><GroupDetails /></PrivateRoutes>
   },
   {
-    path:"*",
-    element: <ErrorPage/>
+    path: "*",
+    element: <ErrorPage />
   },
 
 ]);

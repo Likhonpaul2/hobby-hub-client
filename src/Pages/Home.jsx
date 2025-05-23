@@ -12,6 +12,7 @@ const Home = () => {
   const [featuredGroups, setFeaturedGroups] = useState([]);
   const [darkMode, setDarkMode] = useState(true);
 
+  // fetch data for featured group section from DB 
   useEffect(() => {
     fetch('https://hobby-hub-server-five.vercel.app/featuredGroups')
       .then((res) => res.json())
@@ -21,13 +22,19 @@ const Home = () => {
       });
   }, []);
 
+  // add page title 
+  useEffect(() => {
+    document.title = "Home | Hobby Hub"
+  }, [])
+
   return (
     <div className={darkMode ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'}>
       <header>
+        {/* navbar  */}
         <Navbar />
       </header>
 
-      {/* Dark mood apply */}
+      {/* dark mode  */}
       <div className="flex justify-end p-4">
         <button
           onClick={() => setDarkMode(!darkMode)}
@@ -62,11 +69,11 @@ const Home = () => {
       </section>
 
       {/* https://i.ibb.co/DHd6Z8TS/1.jpg
-https://i.ibb.co/WpYmDYRW/3.jpg
-https://i.ibb.co/VWSY34Sc/2-1.jpg */}
+          https://i.ibb.co/WpYmDYRW/3.jpg
+          https://i.ibb.co/VWSY34Sc/2-1.jpg */}
 
 
-      {/* Featured Groups */}
+      {/* featured groups */}
       <section className="max-w-6xl mx-auto px-4 mb-12">
         <h2 className="text-4xl font-bold mb-6 text-center py-10">🎯 Featured Groups</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -87,23 +94,23 @@ https://i.ibb.co/VWSY34Sc/2-1.jpg */}
         </div>
       </section>
 
-     
-    
 
-      {/* Extra Section 1: How to Join */}
+
+
+      {/* Extra Section 1*/}
       <div className="bg-gradient-to-r from-cyan-100 to-blue-100 py-10 dark:bg-gray-700">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-blue-800 mb-4">🤝 How to Join This Group</h2>
           <p className="text-gray-700 text-lg">
             Interested in joining? Make sure the group has not yet reached its maximum capacity and
-            the start date hasn’t passed. If all is well, click the “Join Group” button on this page 
-            (or register/login first) to confirm your interest. Group admins will get in touch with 
+            the start date hasn’t passed. If all is well, click the “Join Group” button on this page
+            (or register/login first) to confirm your interest. Group admins will get in touch with
             you shortly.
           </p>
         </div>
       </div>
 
-      {/* Extra Section 2: Why Join a Hobby Group? */}
+      {/* Extra Section 2 */}
       <div className="bg-gradient-to-r from-yellow-100 to-pink-100 py-10 dark:bg-gray-700">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-pink-700 mb-4">🎯 Why Join a Hobby Group?</h2>
@@ -116,6 +123,8 @@ https://i.ibb.co/VWSY34Sc/2-1.jpg */}
         </div>
       </div>
 
+
+          {/* footer  */}
       <footer>
         <Footer />
       </footer>

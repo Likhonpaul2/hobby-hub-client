@@ -1,12 +1,13 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 import { toast } from 'react-toastify';
 
 const Register = () => {
-  const { createUser,updateUserProfile} = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -37,7 +38,7 @@ const Register = () => {
 
     // create user and update display name and profilePic
     createUser(email, password)
-      .then((res) => {
+      .then(() => {
         updateUserProfile(name, photoURL)
           .then(() => {
             toast.success('Registered successfully!');
@@ -55,10 +56,15 @@ const Register = () => {
       });
   };
 
+  // page title 
+  useEffect(() => {
+    document.title = "Register | Hobby Hub"
+  }, []);
+
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-md w-full  p-6 rounded shadow">
-        <h2 className="text-2xl font-bold text-center mb-6">Create a HobbyHub Account</h2>
+        <h2 className="text-3xl font-bold text-center mb-6">Create a HobbyHub Account</h2>
         <form onSubmit={handleRegister} className="space-y-4">
           <input type="text" name="name" placeholder="Full Name" className="w-full border p-2 rounded" required />
           <input type="text" name="photoURL" placeholder="Photo URL" className="w-full border p-2 rounded" required />

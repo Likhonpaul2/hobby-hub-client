@@ -1,4 +1,4 @@
-import { useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthContext';
@@ -13,7 +13,14 @@ const MyGroups = () => {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
-    const fetchGroups = () => {
+
+    //  page title 
+    useEffect(() => {
+        document.title = "My Groups | Hobby Hub"
+    }, []);
+
+    //  fetch groups from DB 
+    useEffect(() => {
         fetch(`https://hobby-hub-server-five.vercel.app/groups`)
             .then(res => res.json())
             .then(data => {
@@ -24,14 +31,10 @@ const MyGroups = () => {
                 toast.error('Failed to fetch groups');
                 setLoading(false);
             });
-    };
-
-    useEffect(() => {
-
-        fetchGroups();
-
     }, []);
 
+
+    // group delete from DB 
     const handleDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -64,20 +67,24 @@ const MyGroups = () => {
         });
     };
 
+    // Group update 
     const handleUpdate = (id) => {
         navigate(`/updateGroup/${id}`);
     };
 
+    // spinner 
     if (loading) {
-        return <Spinner/>
+        return <Spinner />
     }
 
     return (
         <div>
             <header>
+                {/* navbar  */}
                 <Navbar />
             </header>
 
+            {/* my groups  */}
             <main className="max-w-6xl mx-auto p-6 min-h-screen">
                 <h2 className="text-3xl font-bold mb-6 text-center">My Created Groups</h2>
                 {groups.length === 0 ? (
@@ -117,6 +124,7 @@ const MyGroups = () => {
                 )}
             </main>
 
+                {/* footer */}
             <footer className="mt-12">
                 <Footer />
             </footer>

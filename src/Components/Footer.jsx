@@ -5,7 +5,9 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white py-8 mt-16">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
         {/* logo */}
+        
         <div className="text-xl font-semibold">
+          <img src="logomain.svg" alt="" className='inline'/>
           Hobby<span className="text-blue-400">Hub</span>
         </div>
 

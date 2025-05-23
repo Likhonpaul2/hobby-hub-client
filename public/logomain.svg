@@ -1,0 +1,6 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" className="inline-block align-middle mr-2" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="#38bdf8" strokeWidth="4" fill="#fff"/>
+            <path d="M13 25c2-3 6-3 8 0" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round"/>
+            <circle cx="16" cy="17" r="2" fill="#38bdf8"/>
+            <circle cx="24" cy="17" r="2" fill="#38bdf8"/>
+          </svg>

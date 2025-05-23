@@ -1,4 +1,4 @@
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { toast } from "react-toastify";
 import Navbar from "../Components/Navbar";
@@ -11,7 +11,12 @@ const GroupDetails = () => {
   const [group, setGroup] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // page title 
+  useEffect(() => {
+    document.title = "Group Details | Hobby Hub"
+  }, [])
 
+  // fetch data from DB for single group details
   useEffect(() => {
     fetch(`https://hobby-hub-server-five.vercel.app/featuredGroups/${id}`)
       .then((res) => res.json())
@@ -26,29 +31,34 @@ const GroupDetails = () => {
       });
   }, [id]);
 
+  // join group 
   const handleJoin = () => {
     toast.success("You have successfully joined the group!");
-    
-  };
 
+  };
+// active group 
   const isGroupActive = (startDate) => {
     const today = new Date();
     const groupDate = new Date(startDate);
     return groupDate >= today;
   };
 
+  // spinner 
   if (loading) {
-    return <Spinner/>;
+    return <Spinner />;
   }
 
+  // not found logic 
   if (!group) {
     return <p className="text-center mt-10">Group not found</p>;
   }
 
   return (
     <div>
+      {/* navbar  */}
       <Navbar />
 
+    {/* group details card  */}
       <div className="max-w-4xl mx-auto p-6 mt-8 bg-gradient-to-br from-gray-100/10 to-blue-50/10 rounded-xl shadow">
         <img
           src={group.imageUrl}
@@ -63,6 +73,7 @@ const GroupDetails = () => {
         <p className="text-gray-300 mb-4">🧑‍💼 Created by: {group.userName}</p>
         <p className=" font-medium mb-6">{group.description}</p>
 
+        {/* join group button logic  */}
         {isGroupActive(group.startDate) ? (
           <button
             onClick={handleJoin}
@@ -77,6 +88,7 @@ const GroupDetails = () => {
         )}
       </div>
 
+        {/* footer  */}
       <Footer />
     </div>
   );
