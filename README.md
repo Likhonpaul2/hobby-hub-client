@@ -4,13 +4,32 @@ Hobby Hub is a web application designed to connect people with similar hobbies a
 
 # Live Link - https://hobby-hub-client-fcf7f.web.app/
 
-## Features
 
-- **User Authentication:** Secure sign-up, login, and profile management.
-- **Browse & Join Hobbies:** Explore a wide range of hobbies and join groups.
-- **Create & Manage Groups:** Start your own hobby group and manage members.
-- **Event Management:** Organize and participate in hobby-related events.
-- **Community Interaction:** Post updates, share media, and interact with other members.
+## 🚀 Main Features
+
+- 🔐 User Authentication (Email & Google Login)
+- 🧑‍🤝‍🧑 Create / Join / View / Update / Delete Hobby Groups
+- 📌 Featured Groups on Homepage
+- 🌓 Dark and Light Theme Toggle
+- 🎞️ Swiper Slider Hero Section
+- 🛡️ Protected Routes with Persistent Login
+- 📅 Conditional Join Group Button (Based on Start Date)
+- ✅ Responsive Design for Mobile, Tablet, and Desktop
+- ❌ 404 Not Found Page & Loading Spinners
+
+## 🛠️ Main Technologies Used
+
+- React.js (Vite)
+- Tailwind CSS
+- Firebase Authentication
+- Express.js & MongoDB
+- React Router DOM
+- React Toastify & SweetAlert2
+- Swiper.js
+- Lottie React
+- React Awesome Reveal
+- React Simple Typewriter
+- dotenv
 
 ## Technologies Used
 
@@ -22,11 +41,27 @@ Hobby Hub is a web application designed to connect people with similar hobbies a
 
 ## Getting Started
 
-1. Clone the repository.
-2. Install dependencies: `npm install`
-3. Set up environment variables as needed.
-4. Run the development server: `npm start`
+To run this project on your local machine:
 
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/Likhonpaul2/hobby-hub-client.git
+    cd hobby-hub-client
+    ```
 
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3. **Set up environment variables:**
+    - Create a `.env` file in the root directory.
+    - Add the required environment variables (refer to `.env.example` if available).
+
+4. **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    The app should now be running at [http://localhost:5173](http://localhost:5173) (or the port specified in your setup).
 
 *Happy hobbying with Hobby Hub!*
