@@ -11,7 +11,7 @@ import MyGroups from "../Pages/MyGroups";
 import UpdateGroup from "../Pages/UpdateGroup";
 import GroupDetails from "../Pages/GroupDetails";
 import PrivateRoutes from "./PrivateRoutes";
-import ErrorPage from "../Pages/ErrorPage";
+import ErrorPage from "../Pages/ErrorPage"; 
 
 export const router = createBrowserRouter([
   {
