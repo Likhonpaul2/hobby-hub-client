@@ -37,8 +37,36 @@ const Navbar = () => {
         }>
         All Groups
       </NavLink>
+      <NavLink
+        to="/about-us"
+        className={({ isActive }) =>
+          isActive ? 'text-green-500 font-semibold' : 'text-white hover:text-green-300 transition'
+        }>
+        About us
+      </NavLink>
+      <NavLink
+        to="/contact"
+        className={({ isActive }) =>
+          isActive ? 'text-green-500 font-semibold' : 'text-white hover:text-green-300 transition'
+        }>
+        Contact
+      </NavLink>
+      <NavLink
+        to="/support"
+        className={({ isActive }) =>
+          isActive ? 'text-green-500 font-semibold' : 'text-white hover:text-green-300 transition'
+        }>
+        Support
+      </NavLink>
       {user && (
         <>
+          <NavLink
+            to="/dash-board"
+            className={({ isActive }) =>
+              isActive ? 'text-green-500 font-semibold' : 'text-white hover:text-green-300 transition'
+            }>
+            Dashboard
+          </NavLink>
           <NavLink
             to="/createGroup"
             className={({ isActive }) =>
@@ -61,7 +89,9 @@ const Navbar = () => {
   return (
     <nav className="backdrop-blur-md bg-white/30 dark:bg-gray-800/40 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
         <Link to="/" className="text-xl font-bold tracking-wide">
+
           {/* SVG Logo */}
           <img src="logomain.svg" alt="" className='inline' />
           <div className="text-xl font-semibold inline-block align-middle">
@@ -134,12 +164,6 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-
-
-
-
-
-
       )}
     </nav>
   );
