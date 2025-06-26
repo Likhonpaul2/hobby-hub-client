@@ -53,6 +53,19 @@ To run this project on your local machine:
     ```bash
     npm install
     ```
+<<<<<<< HEAD
+
+3. **Set up environment variables:**
+    - Create a `.env` file in the root directory.
+    - Add the required environment variables (refer to `.env.example` if available).
+
+4. **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    The app should now be running at [http://localhost:5173](http://localhost:5173) (or the port specified in your setup).
+=======
+>>>>>>> c5ef73f626b1ba70b687afa280577d6a82c7797c
 
 3. **Set up environment variables:**
     - Create a `.env` file in the root directory.
